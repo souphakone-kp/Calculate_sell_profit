@@ -1,0 +1,36 @@
+:root {
+  --bg: #0F1117;
+  --panel: #1A1D27;
+  --panel2: #3e496e;
+  --edge: #2A2D3A;
+  --text: #E8EAF0;
+  --subtext: #8B8FA8;
+
+  --teal: #00C9A7;
+  --amber: #FFB347;
+  --coral: #FF6B6B;
+  --lavender: #A78BFA;
+}
+
+/* ---------------- LIGHT THEME ---------------- */
+[data-theme="light"] {
+  --bg: #F5F7FB;
+  --panel: #FFFFFF;
+  --panel2: #F0F2F7;
+  --edge: #E0E4EC;
+  --text: #1E1F23;
+  --subtext: #6B7280;
+
+  --teal: #0CA678;
+  --amber: #E67700;
+  --coral: #E03131;
+  --lavender: #7950F2;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas;
+  transition: background 0.25s ease, color 0.25s ease;
+}

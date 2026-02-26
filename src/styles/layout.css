@@ -1,0 +1,220 @@
+.app{ padding:18px; }
+.container{ max-width:1200px; margin:0 auto; }
+
+.header{ display:flex; align-items:flex-start; justify-content:space-between; gap:12px; margin-bottom:14px; }
+.title{ font-size:18px; font-weight:800; }
+.subtitle{ font-size:12px; color:var(--subtext); margin-top:4px; }
+
+.hint{ color:var(--subtext); font-size:12px; margin:8px 0 12px; }
+
+.grid3{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap:12px;
+}
+.grid4{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap:12px;
+}
+
+@media (max-width: 980px){
+  .grid3{ grid-template-columns: 1fr; }
+  .grid4{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px){
+  .grid4{ grid-template-columns: 1fr; }
+}
+
+.field{ display:grid; gap:6px; }
+.fieldLabel{ font-size:12px; color:var(--subtext); }
+.input{
+  background:var(--panel2);
+  border:1px solid var(--edge);
+  color:var(--text);
+  border-radius:10px;
+  padding:10px 12px;
+  outline:none;
+  font-size:14px;
+}
+.input:focus{ border-color:var(--lavender); }
+
+.card{
+  background:var(--panel);
+  border:1px solid var(--edge);
+  border-radius:14px;
+  padding:14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  min-height:260px;
+}
+.cardTop{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+  margin-bottom:6px;
+}
+.cardTitle{
+  font-size:12px;
+  color:var(--subtext);
+}
+
+.rightStat{ text-align:right; }
+.rightStatLabel{ font-size:11px; color:var(--subtext); }
+.rightStatValue{ font-size:16px; font-weight:900; }
+.rightStatHint{ font-size:11px; color:var(--subtext); margin-top:4px; }
+
+.chartH220{ width:100%; height:220px; }
+.chartH160{ width:100%; height:160px; }
+.chartH320{ width:100%; height:320px; }
+
+.split{
+  display:grid;
+  grid-template-columns: 1fr 0.85fr;
+  gap:10px;
+  align-items:center;
+}
+@media (max-width: 980px){
+  .split{ grid-template-columns: 1fr; }
+}
+
+.miniCard{
+  background:var(--panel2);
+  border:1px solid var(--edge);
+  border-radius:14px;
+  padding:10px;
+}
+.miniTitle{ font-size:11px; color:var(--subtext); margin-bottom:6px; }
+.centerBig{ text-align:center; font-weight:900; font-size:16px; margin-top:-10px; }
+.miniSub{ text-align:center; color:var(--subtext); font-size:11px; }
+
+.kpi{
+  background:var(--panel);
+  border:1px solid var(--edge);
+  border-radius:14px;
+  padding:12px;
+}
+.kpiLabel{ font-size:11px; color:var(--subtext); }
+.kpiValue{ font-size:16px; font-weight:900; margin-top:6px; }
+
+.mt12{ margin-top:12px; }
+
+.summaryTable {
+  background: var(--panel);
+  border: 1px solid var(--edge);
+  border-radius: 14px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.summaryTitle {
+  text-align: center;
+  font-weight: bold;
+  margin: 10px 0;
+  color: var(--subtext);
+  font-size: 13px;
+}
+
+.summaryTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.summaryTable td {
+  padding: 8px 4px;
+  border-bottom: 1px solid var(--edge);
+  font-size: 13px;
+}
+
+.summaryTable td:last-child {
+  text-align: right;
+  font-weight: bold;
+}
+
+.grid6{
+  display:grid;
+  grid-template-columns: repeat(6, minmax(0,1fr));
+  gap:12px;
+}
+
+@media (max-width:1200px){
+  .grid6{ grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width:700px){
+  .grid6{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width:480px){
+  .grid6{ grid-template-columns: 1fr; }
+}
+
+.summaryWrapper {
+  margin-top: 18px;
+}
+
+.summaryTitle {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: var(--subtext);
+  font-size: 14px;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 800px) {
+  .summaryGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.currencyTitle {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.summaryTable {
+  background: var(--panel);
+  border: 1px solid var(--edge);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.summaryTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.summaryTable td {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--edge);
+  font-size: 13px;
+}
+
+.summaryTable td:last-child {
+  text-align: right;
+  font-weight: bold;
+}
+
+.themeToggle {
+  background: var(--panel);
+  border: 1px solid var(--edge);
+  color: var(--text);
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.themeToggle:hover {
+  transform: translateY(-2px);
+  background: var(--panel2);
+}
