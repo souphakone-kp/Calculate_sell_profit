@@ -166,7 +166,7 @@ export default function App() {
       <div className="container">
         <header className="header">
           <div>
-            <div className="title">⚡ ENERGY GEL · PROFIT DASHBOARD</div>
+            <div className="title">⚡ SOUPHAKONE · PROFIT DASHBOARD</div>
             <div className="subtitle">
               Editable: Express (THB) + KIP rate (KIP/THB)
             </div>
