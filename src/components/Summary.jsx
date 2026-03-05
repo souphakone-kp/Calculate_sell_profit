@@ -1,87 +1,88 @@
 import React from "react";
-
+import { useLanguage } from "../contexts/LanguageContext";
 const fmt = (n) =>
   Number.isFinite(Number(n)) ? Number(n).toLocaleString() : "-";
 
 export default function Summary({ data }) {
   if (!data) return null;
-   
+
+  const { t } = useLanguage();
 
   return (
     <div className="summaryWrapper">
-      <div className="summaryTitle">SUMMARY</div>
+      <div className="summaryTitle">{t("summary")}</div>
 
       <div className="summaryGrid">
-        {/* ---------------- THB TABLE ---------------- */}
+        {/* THB */}
         <div className="summaryTable">
           <div className="currencyTitle">THB (฿)</div>
           <table>
             <tbody>
               <tr>
-                <td>Total Cost</td>
+                <td>{t("totalCost")}</td>
                 <td>฿{fmt(data.costTotalTHB)}</td>
               </tr>
               <tr>
-                <td>Total Profit</td>
+                <td>{t("totalProfit")}</td>
                 <td>฿{fmt(data.profitTotalTHB)}</td>
               </tr>
               <tr>
-                <td>Total Revenue</td>
+                <td>{t("totalRevenue")}</td>
                 <td>฿{fmt(data.totalRevenueTHB)}</td>
               </tr>
               <tr>
-                <td>Cost / piece</td>
+                <td>{t("costPiece")}</td>
                 <td>฿{fmt(data.costPerPieceTHBRound)}</td>
               </tr>
               <tr>
-                <td>Set price / piece</td>
+                <td>{t("setPricePiece")}</td>
                 <td>฿{fmt(data.sellPerPieceTHB)}</td>
               </tr>
               <tr>
-                <td>Profit / piece</td>
+                <td>{t("profitPiece")}</td>
                 <td>฿{fmt(data.profitPerPieceTHB)}</td>
               </tr>
               <tr>
-                <td>Profit %</td>
+                <td>{t("profitPct")}</td>
                 <td>{data.getProfitPercent.toFixed(2)}%</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        {/* ---------------- KIP TABLE ---------------- */}
+        {/* KIP */}
         <div className="summaryTable">
           <div className="currencyTitle">KIP (₭)</div>
           <table>
             <tbody>
               <tr>
-                <td>Total Cost</td>
+                <td>{t("totalCost")}</td>
                 <td>₭{fmt(data.costTotalKIP)}</td>
               </tr>
               <tr>
-                <td>Total Profit</td>
+                <td>{t("totalProfit")}</td>
                 <td>₭{fmt(data.profitTotalKIP)}</td>
               </tr>
-               <tr>
-                <td>Total Revenue</td>
+              <tr>
+                <td>{t("totalRevenue")}</td>
                 <td>₭{fmt(data.totalRevenueKIP)}</td>
               </tr>
               <tr>
-                <td>Cost / piece</td>
+                <td>{t("costPiece")}</td>
                 <td>₭{fmt(data.costPerPieceKIPRound)}</td>
               </tr>
               <tr>
-                <td>Set price / piece</td>
+                <td>{t("setPricePiece")}</td>
                 <td>₭{fmt(data.sellPerPieceKIP)}</td>
               </tr>
               <tr>
-                <td>Profit / piece</td>
+                <td>{t("profitPiece")}</td>
                 <td>₭{fmt(data.profitPerPieceKIP)}</td>
               </tr>
-                            <tr>
-                <td>Profit %</td>
+              <tr>
+                <td>{t("profitPct")}</td>
                 <td>{data.getProfitPercent.toFixed(2)}%</td>
-              </tr> 
+              </tr>
             </tbody>
           </table>
         </div>

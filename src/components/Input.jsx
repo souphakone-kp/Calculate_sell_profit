@@ -1,6 +1,8 @@
 import React from "react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Input({ value, onChange, settings, onSettingsChange }) {
+  const { t } = useLanguage();
   const setField = (key, v) => onChange((prev) => ({ ...prev, [key]: v }));
   const setSetting = (key, v) => onSettingsChange((prev) => ({ ...prev, [key]: v }));
 
@@ -8,7 +10,7 @@ export default function Input({ value, onChange, settings, onSettingsChange }) {
     <section className="grid3">
       {/* ---- Product inputs ---- */}
       <label className="field">
-        <span className="fieldLabel">Energy Gel (THB)</span>
+        <span className="fieldLabel">{t("energyGel")}</span>
         <input
           className="input"
           type="number"
@@ -19,7 +21,7 @@ export default function Input({ value, onChange, settings, onSettingsChange }) {
       </label>
 
       <label className="field">
-        <span className="fieldLabel">Pieces</span>
+        <span className="fieldLabel">{t("pieces")}</span>
         <input
           className="input"
           type="number"
@@ -31,7 +33,7 @@ export default function Input({ value, onChange, settings, onSettingsChange }) {
       </label>
 
       <label className="field">
-        <span className="fieldLabel">Set price/piece (THB)</span>
+        <span className="fieldLabel">{t("setPricePieceTHB")}</span>
         <input
           className="input"
           type="number"
@@ -43,7 +45,7 @@ export default function Input({ value, onChange, settings, onSettingsChange }) {
 
       {/* ---- Settings inputs (NEW) ---- */}
       <label className="field">
-        <span className="fieldLabel">KIP currency rate (KIP/THB)</span>
+        <span className="fieldLabel">{t("kipRate")}</span>
         <input
           className="input"
           type="number"
@@ -54,7 +56,7 @@ export default function Input({ value, onChange, settings, onSettingsChange }) {
       </label>
 
       <label className="field">
-        <span className="fieldLabel">Express to Laos (THB)</span>
+        <span className="fieldLabel">{t("expressToLaos")}</span>
         <input
           className="input"
           type="number"

@@ -3,10 +3,13 @@ import React, { useEffect, useMemo, useState } from "react";
 import Input from "./components/Input";
 import Dashboard from "./components/Dashboard";
 import Summary from "./components/Summary";
+import { useLanguage } from "./contexts/LanguageContext";
 import "./styles/theme.css";
 import "./styles/layout.css";
 
 export default function App() {
+  const { t, language, setLanguage } = useLanguage();
+
   // -----------------------
   // Inputs
   // -----------------------
@@ -52,7 +55,7 @@ export default function App() {
       !Number.isFinite(express) ||
       p <= 0
     ) {
-      return { ok: false, message: "Please enter valid numbers (Pieces must be > 0)." };
+      return { ok: false, message: t("invalidNumbers") };
     }
 
     // totals
@@ -82,27 +85,27 @@ export default function App() {
 
     // chart datasets
     const totalsTHB = [
-      { name: "Cost", value: costTotalTHB, color: "var(--coral)" },
-      { name: "Revenue", value: totalRevenueTHB, color: "var(--teal)" },
-      { name: "Profit", value: profitTotalTHB, color: "var(--amber)" },
+      { name: t("cost"), value: costTotalTHB, color: "var(--coral)" },
+      { name: t("revenue"), value: totalRevenueTHB, color: "var(--teal)" },
+      { name: t("profit"), value: profitTotalTHB, color: "var(--amber)" },
     ];
 
     const totalsKIP = [
-      { name: "Cost", value: costTotalKIP, color: "var(--coral)" },
-      { name: "Revenue", value: totalRevenueKIP, color: "var(--teal)" },
-      { name: "Profit", value: profitTotalKIP, color: "var(--amber)" },
+      { name: t("cost"), value: costTotalKIP, color: "var(--coral)" },
+      { name: t("revenue"), value: totalRevenueKIP, color: "var(--teal)" },
+      { name: t("profit"), value: profitTotalKIP, color: "var(--amber)" },
     ];
 
     const revenueSplitTHB = [
-      { name: "Cost", value: costTotalTHB, color: "var(--coral)" },
-      { name: "Profit", value: profitTotalTHB, color: "var(--teal)" },
+      { name: t("cost"), value: costTotalTHB, color: "var(--coral)" },
+      { name: t("profit"), value: profitTotalTHB, color: "var(--teal)" },
     ];
 
     const profitPctSplit = (() => {
       const pct = Math.max(0, Math.min(100, getProfitPercent));
       return [
-        { name: "Profit%", value: pct, color: "var(--amber)" },
-        { name: "Rest", value: 100 - pct, color: "var(--edge)" },
+        { name: t("profitPct"), value: pct, color: "var(--amber)" },
+        { name: t("rest"), value: 100 - pct, color: "var(--edge)" },
       ];
     })();
 
@@ -159,25 +162,45 @@ export default function App() {
       cumulative,
       breakEven,
     };
-  }, [inputs, settings, theme]);
+  }, [inputs, settings, theme, t]);
 
   return (
     <div className="app">
       <div className="container">
         <header className="header">
           <div>
-            <div className="title">⚡ SOUPHAKONE · PROFIT DASHBOARD</div>
+            <div className="title">{t("appTitle")}</div>
             <div className="subtitle">
-              Editable: Express (THB) + KIP rate (KIP/THB)
+              {t("appSubtitle")}
             </div>
           </div>
 
-          <button
-            className="themeToggle"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          >
-            {theme === "dark" ? "☀ Light" : "🌙 Dark"}
-          </button>
+          <div style={{ display: "flex", gap: "8px" }}>
+            <select 
+              value={language} 
+              onChange={(e) => setLanguage(e.target.value)}
+              style={{
+                background: "var(--panel)",
+                color: "var(--text)",
+                border: "1px solid var(--edge)",
+                borderRadius: "6px",
+                padding: "4px 8px",
+                fontSize: "13px",
+                cursor: "pointer",
+                outline: "none"
+              }}
+            >
+              <option value="th">🇹🇭 TH</option>
+              <option value="la">🇱🇦 LA</option>
+              <option value="en">🇬🇧 EN</option>
+            </select>
+            <button
+              className="themeToggle"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            >
+              {theme === "dark" ? t("themeLight") : t("themeDark")}
+            </button>
+          </div>
         </header>
 
         <Input
