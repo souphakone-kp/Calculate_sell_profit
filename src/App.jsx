@@ -14,7 +14,7 @@ export default function App() {
   // Inputs
   // -----------------------
   const [inputs, setInputs] = useState({
-    energyGelTHB: 2808,
+    thingTHB: 2808,
     pieces: 90,
     sellPerPieceTHB: 60,
   });
@@ -40,7 +40,7 @@ export default function App() {
   // Calculations
   // -----------------------
   const calc = useMemo(() => {
-    const e = Number(inputs.energyGelTHB);
+    const e = Number(inputs.thingTHB);
     const p = Number(inputs.pieces);
     const s = Number(inputs.sellPerPieceTHB);
 
@@ -131,7 +131,7 @@ export default function App() {
       expressToLaos: express,
 
       // inputs
-      energyGelTHB: e,
+      thingTHB: e,
       pieces: p,
       sellPerPieceTHB: s,
 

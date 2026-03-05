@@ -10,12 +10,12 @@ export default function Input({ value, onChange, settings, onSettingsChange }) {
     <section className="grid3">
       {/* ---- Product inputs ---- */}
       <label className="field">
-        <span className="fieldLabel">{t("energyGel")}</span>
+        <span className="fieldLabel">{t("thing")}</span>
         <input
           className="input"
           type="number"
-          value={value.energyGelTHB}
-          onChange={(e) => setField("energyGelTHB", e.target.value)}
+          value={value.thingTHB}
+          onChange={(e) => setField("thingTHB", e.target.value)}
           placeholder="2808"
         />
       </label>

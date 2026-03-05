@@ -9,7 +9,7 @@ const translations = {
     invalidNumbers: "Please enter valid numbers (Pieces must be > 0).",
     
     // Input
-    energyGel: "Energy Gel (THB)",
+    thing: "All Cost (THB)",
     pieces: "Pieces",
     setPricePieceTHB: "Set price/piece (THB)",
     kipRate: "KIP currency rate (KIP/THB)",
@@ -61,7 +61,7 @@ const translations = {
     invalidNumbers: "กรุณากรอกตัวเลขที่ถูกต้อง (จำนวนชิ้นต้อง > 0)",
     
     // Input
-    energyGel: "เจลพลังงาน (บาท)",
+    thing: "ต้นทุนทั้งหมด (บาท)",
     pieces: "จำนวนชิ้น",
     setPricePieceTHB: "ตั้งราคาขาย/ชิ้น (บาท)",
     kipRate: "เรทเงินกีบ (กีบ/บาท)",
@@ -113,7 +113,7 @@ const translations = {
     invalidNumbers: "ກະລຸນາປ້ອນຕົວເລກທີ່ຖືກຕ້ອງ (ຈຳນວນຊິ້ນຕ້ອງ > 0)",
     
     // Input
-    energyGel: "ເຈວພະລັງງານ (ບາດ)",
+    thing: "ລາຄາຕົ້ນທຶນ (ບາດ)",
     pieces: "ຈຳນວນຊິ້ນ",
     setPricePieceTHB: "ຕັ້ງລາຄາຂາຍ/ຊິ້ນ (ບາດ)",
     kipRate: "ເຣດເງິນກີບ (ກີບ/ບາດ)",
