@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 
 const translations = {
   en: {
-    appTitle: "⚡ SOUPHAKONE · PROFIT DASHBOARD",
+    appTitle: "⚡ SOUPHAKONE KP · PROFIT DASHBOARD",
     appSubtitle: "Editable: Express (THB) + KIP rate (KIP/THB)",
     themeLight: "☀ Light",
     themeDark: "🌙 Dark",
